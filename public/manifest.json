@@ -1,0 +1,7 @@
+{
+  "short_name": "Armor.Fi",
+  "name": "Armor.Fi",
+  "description": "Smart DeFi Asset Coverage",
+  "iconPath": "armor-logo.svg",
+  "providedBy": {"name": "Armor.Fi", "url": "https://armor.fi"}
+}

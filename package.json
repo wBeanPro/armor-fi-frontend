@@ -1,0 +1,118 @@
+{
+  "homepage": "./",
+  "name": "armor-fi-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@ethersproject/providers": "^5.0.5",
+    "@ethersproject/units": "^5.0.2",
+    "@formatjs/intl-numberformat": "^6.2.5",
+    "@gnosis.pm/safe-apps-provider": "^0.3.0",
+    "@gnosis.pm/safe-apps-react-sdk": "^2.3.0",
+    "@gnosis.pm/safe-apps-web3-react": "^0.3.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@web3-react/authereum-connector": "^6.1.1",
+    "@web3-react/core": "^6.1.1",
+    "@web3-react/fortmatic-connector": "^6.0.9",
+    "@web3-react/frame-connector": "^6.0.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "@web3-react/ledger-connector": "^6.1.1",
+    "@web3-react/network-connector": "^6.1.3",
+    "@web3-react/portis-connector": "^6.1.1",
+    "@web3-react/squarelink-connector": "^6.1.1",
+    "@web3-react/torus-connector": "^6.1.1",
+    "@web3-react/trezor-connector": "^6.1.1",
+    "@web3-react/walletconnect-connector": "^6.1.4",
+    "@web3-react/walletlink-connector": "^6.1.1",
+    "async": "^3.2.0",
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "body-scroll-lock": "^3.1.5",
+    "buffer": "^5.6.0",
+    "dotenv": "^8.2.0",
+    "execa": "^4.0.3",
+    "flux": "^3.1.3",
+    "i18next": "^19.8.4",
+    "ipfs-react-router": "^0.2.2",
+    "js2xmlparser": "^4.0.1",
+    "lodash.difference": "^4.5.0",
+    "moment": "^2.27.0",
+    "moment-duration-format": "^2.3.2",
+    "node-cache-redis": "^6.1.0",
+    "prop-types": "^15.7.2",
+    "qs": "^6.9.4",
+    "rc-progress": "^3.1.1",
+    "react": "^16.14.0",
+    "react-collapse": "^5.1.0",
+    "react-copy-to-clipboard": "^5.0.3",
+    "react-countdown": "^2.3.1",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^16.14.0",
+    "react-head": "^3.4.0",
+    "react-i18next": "^11.7.3",
+    "react-locky": "^1.5.7",
+    "react-resize-detector": "^6.0.1-rc.5",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4",
+    "request-promise": "^4.2.6",
+    "styled-components": "^5.2.1",
+    "typeface-roboto": "0.0.54",
+    "web3": "1.3.6",
+    "web3-utils": "1.3.6",
+    "xml2json": "^0.12.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "gnosisstart": "react-app-rewired start",
+    "gnosisbuild": "react-app-rewired build",
+    "gnosistest": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "deploy:ipfs": "node ipfsDeployer.js",
+    "lint": "eslint './src/**/*.{js,jsx}'",
+    "lint:fix": "eslint './src/**/*.{js,jsx}' --fix",
+    "translate": "node translator.js && git add src/locales/*",
+    "deploy:rinkeby": "git checkout dev && git pull origin dev && git checkout rinkeby && git pull origin rinkeby && git merge dev && git push origin rinkeby && git checkout dev"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run translate && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --cache --fix",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.1",
+    "prettier": "^2.1.2",
+    "react-app-rewired": "^2.1.8",
+    "web3-react": "^5.0.5"
+  }
+}
